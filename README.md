@@ -1,4 +1,4 @@
-# cmd-line-assn
+# CMD Line Assignment
 
 This Python command line program calculates the average of air pollutant PM2.5 over n minutes, of
 all the stations that are map bound by two pairs of latitudes and longitudes.
