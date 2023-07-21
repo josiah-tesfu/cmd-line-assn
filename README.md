@@ -11,4 +11,4 @@ lat_2, lng_2
 - sampling period in minutes (default = 5)
 - sampling rate in sample(s) / minute (default = 1)
 
-Run in the terminal as: `python cmd-line-assn.py "lat_1,lng_1,lat_2,lng_2" period rate`
+Run in the terminal as: `python cmd-line-assn.py --latlng="lat_1,lng_1,lat_2,lng_2" period rate`
