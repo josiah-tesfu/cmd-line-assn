@@ -6,7 +6,7 @@ token = "1327fb6351f3b16cc0ad6659b17a74a5f890d27b"
 
 # Add the cmd line arguments
 parser = argparse.ArgumentParser()
-parser.add_argument("latlng", type=str)
+parser.add_argument("--latlng", type=str)
 parser.add_argument("period", nargs = "?", type=int, default=5)
 parser.add_argument("rate", type=int, nargs = "?", default=1)
 
@@ -18,6 +18,10 @@ period = args.period * 60
 # Get the ID's for all the stations given by latlng
 stations_list_response = requests.get(f"https://api.waqi.info/v2/map/bounds?latlng={args.latlng}&networks=all&token={token}").json()
 uid_list = [data["uid"] for data in stations_list_response["data"]]
+
+if not uid_list:
+    print("No stations found for the given latlng bounds.")
+    exit()
 
 start_time = time.time()
 
